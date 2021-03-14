@@ -2,7 +2,7 @@
 let dbconfig = require("../../modules/dbconfig");
 
 module.exports = async function (req, res) {
-  let sql = "select * from nanny where is_child = 1";
+  let sql = "select id,name,avatar_img,tags,is_normal,is_older,is_child,is_excellent from nanny where is_child = 1";
   let sqlArr = [];
   const data = await dbconfig.sySqlConnect(sql, sqlArr);
   if (!data) return res.sendResult(null, 400, "获取保姆数据失败");

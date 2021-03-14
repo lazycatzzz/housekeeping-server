@@ -1,9 +1,10 @@
 // 连接数据库
-let dbconfig = require("../../modules/dbconfig");
+let dbconfig = require("../modules/dbconfig");
 
 module.exports = async function (req, res) {
-  let sql = "select id,name,avatar_img,tags,is_normal,is_older,is_child,is_excellent from nanny where is_normal = 1";
-  let sqlArr = [];
+  console.log(req.params)
+  let sql = "select * from nanny where id = ?";
+  let sqlArr = [req.params.id];
   const data = await dbconfig.sySqlConnect(sql, sqlArr);
   if (!data) return res.sendResult(null, 400, "获取保姆数据失败");
   console.log(data)

@@ -10,4 +10,8 @@ module.exports = app => {
   app.post('/follow/add', require('../actions/follow/add'))
   // 候选列表
   app.get('/follow/list/:uid', require('../actions/follow/list'))
+  // 生成订单
+  app.post('/order/add', require('../actions/order/add'))
+  // 订单列表
+  app.get('/order/list/:uid', require('../actions/order/list'))
 };

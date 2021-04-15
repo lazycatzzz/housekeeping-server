@@ -14,4 +14,6 @@ module.exports = app => {
   app.post('/order/add', require('../actions/order/add'))
   // 订单列表
   app.get('/order/list/:uid', require('../actions/order/list'))
+  // 获取全部人员
+  app.get('/list/:intention', require('../actions/list/intention'))
 };

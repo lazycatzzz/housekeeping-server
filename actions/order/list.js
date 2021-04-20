@@ -11,10 +11,8 @@ module.exports = async function (req, res) {
     if (data[i].is_reply !== 0) continue;
     let tmp = `select avatar_img,name from nanny where id = ?`;
     let arr = [data[i].sid];
-    console.log('helllllo')
     const obj = await dbconfig.sySqlConnect(tmp, arr);
     data[i] = {...data[i], ...obj[0]}
   }
-  console.log(data)
   return res.sendResult(data, 200, "获取订单成功");
 };

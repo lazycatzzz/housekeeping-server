@@ -15,7 +15,7 @@ module.exports = async function (req, res) {
   }
   const idStr = sidArr.join(",");
   sql =
-    `select id,name,avatar_img,tags,is_normal,is_older,is_child,is_excellent from nanny where id in (${idStr})`;
+    `select id,name,age,avatar_img,tags,is_normal,is_older,is_child,is_excellent,location,intention from nanny where id in (${idStr})`;
   sqlArr = [];
   const list = await dbconfig.sySqlConnect(sql, sqlArr);
   console.log(list);

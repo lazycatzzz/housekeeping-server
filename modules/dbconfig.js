@@ -1,3 +1,4 @@
+// 引入MySQL模块
 const mysql = require("mysql");
 module.exports = {
   // 数据库配置

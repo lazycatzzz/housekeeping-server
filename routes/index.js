@@ -16,4 +16,6 @@ module.exports = app => {
   app.get('/order/list/:uid', require('../actions/order/list'))
   // 获取全部人员
   app.get('/list/:intention', require('../actions/list/intention'))
+  // 获取清洁
+  app.get('/clean/:id', require('../actions/clean/clean'))
 };

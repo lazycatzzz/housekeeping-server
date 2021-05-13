@@ -12,6 +12,7 @@ module.exports = app => {
   app.get('/follow/list/:uid', require('../actions/follow/list'))
   // 生成订单
   app.post('/order/add', require('../actions/order/add'))
+  app.post('/order/addcl', require('../actions/order/addcl'))
   // 订单列表
   app.get('/order/list/:uid', require('../actions/order/list'))
   // 获取全部人员
